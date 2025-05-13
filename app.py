@@ -6,12 +6,12 @@ from string import punctuation
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
 # Download NLTK data with error handling
-nltk.data.path.append('./nltk_data')
-# try:
-#     nltk.download('punkt', quiet=True)
-#     nltk.download('stopwords', quiet=True)
-# except Exception as e:
-#     st.error(f"Failed to download NLTK data: {e}")
+# nltk.data.path.append('./nltk_data')
+try:
+    nltk.download('punkt', quiet=True)
+    nltk.download('stopwords', quiet=True)
+except Exception as e:
+    st.error(f"Failed to download NLTK data: {e}")
 # fucntions
 def transform_text(text):
     text = text.lower()  # converting to lowercase
