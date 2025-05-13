@@ -1,3 +1,3 @@
 streamlit
 nltk>=3.8.1
-sckit-learn
+scikit-learn
