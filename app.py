@@ -5,8 +5,12 @@ from nltk.corpus import stopwords
 from string import punctuation
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
-nltk.download('punkt')
-nltk.download('stopwords')
+# Download NLTK data with error handling
+try:
+    nltk.download('punkt', quiet=True)
+    nltk.download('stopwords', quiet=True)
+except Exception as e:
+    st.error(f"Failed to download NLTK data: {e}")
 # fucntions
 def transform_text(text):
     text = text.lower()  # converting to lowercase
